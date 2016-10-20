@@ -45,15 +45,15 @@ pt-duplicate-key-checker --host=localhost --port=3306 --user=root --password=123
 # To remove this duplicate index, execute:
 ALTER TABLE `percona`.`test` DROP INDEX `idx_k`;
 
-# Uniqueness of idx_u ignored because PRIMARY is a duplicate constraint
-# idx_u is a duplicate of PRIMARY
+# Uniqueness of idx_uk ignored because PRIMARY is a duplicate constraint
+# idx_uk is a duplicate of PRIMARY
 # Key definitions:
-#   UNIQUE KEY `idx_u` (`id`),
+#   UNIQUE KEY `idx_uk` (`id`),
 #   PRIMARY KEY (`id`),
 # Column types:
 #	  `id` int(11) not null auto_increment
 # To remove this duplicate index, execute:
-ALTER TABLE `percona`.`test` DROP INDEX `idx_u`;
+ALTER TABLE `percona`.`test` DROP INDEX `idx_uk`;
 
 # ########################################################################
 # Summary of indexes
