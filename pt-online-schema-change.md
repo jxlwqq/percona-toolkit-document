@@ -38,6 +38,35 @@ CREATE TABLE IF NOT EXISTS user (
 ```
 #### 命令示例：
 ```
-pt-online-schema-change --alter "ADD COLUMN c1 INT" D=percona,t=user
+pt-online-schema-change h=localhost,A=utf8,D=percona,t=user,u=root,p=123456 --alter="add column c1 int not null" --execute
 ```
 
+#### 返回结果：
+```
+No slaves found.  See --recursion-method if host web-phpdeMac-mini.local has slaves.
+Not checking slave lag because no slaves were found and --check-slave-lag was not specified.
+Operation, tries, wait:
+  analyze_table, 10, 1
+  copy_rows, 10, 0.25
+  create_triggers, 10, 1
+  drop_triggers, 10, 1
+  swap_tables, 10, 1
+  update_foreign_keys, 10, 1
+Altering `percona`.`user`...
+Creating new table...
+Created new table percona._user_new OK.
+Altering new table...
+Altered `percona`.`_user_new` OK.
+2016-10-21T18:02:21 Creating triggers...
+2016-10-21T18:02:22 Created triggers OK.
+2016-10-21T18:02:22 Copying approximately 1 rows...
+2016-10-21T18:02:22 Copied rows OK.
+2016-10-21T18:02:22 Analyzing new table...
+2016-10-21T18:02:22 Swapping tables...
+2016-10-21T18:02:23 Swapped original and new tables OK.
+2016-10-21T18:02:23 Dropping old table...
+2016-10-21T18:02:23 Dropped old table `percona`.`_user_old` OK.
+2016-10-21T18:02:23 Dropping triggers...
+2016-10-21T18:02:23 Dropped triggers OK.
+Successfully altered `percona`.`user`.
+```
