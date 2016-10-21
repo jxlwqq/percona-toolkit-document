@@ -4,7 +4,6 @@
  pt-duplicate-key-checker - 从 MySQL 表中找出重复的索引和外键
 
 
-
 ## 简介
 
 ### 意义
@@ -24,6 +23,8 @@ pt-duplicate-key-checker 会检查MySQL表中重复或冗余的索引和外键�
 ### 示例
 #### 创建示例表：
 ```
+CREATE DATABASE IF NOT EXISTS percona;
+USE percona;
 CREATE TABLE IF NOT EXISTS user (
   id       INT         NOT NULL AUTO_INCREMENT,
   username VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户名',
@@ -103,5 +104,7 @@ Percona Toolkit 是一套成熟的并经过充分与严格测试验证的工具�
 ### --ask-pass
 连接MySQL时提示输入密码
 
- 
+### --charset
+设置默认的字符集。简写形式为: -A。
+
 ## DSN 选项
