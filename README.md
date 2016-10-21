@@ -7,11 +7,12 @@ Percona Toolkit 是那些私有或一次性脚本的理想替代工具，因为�
 Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器管理工具包。
 
 ## 获取 Percona Toolkit
+
 * [安装](Installation.md)
 
 ## 工具列表
 
-* pt-align
+* [pt-align](pt-align.md)
 * pt-archiver
 * pt-config-diff 
 * pt-deadlock-logger
@@ -27,7 +28,7 @@ Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器�
 * pt-kill
 * pt-mext
 * pt-mysql-summary
-* pt-online-schema-change
+* [pt-online-schema-change](pt-online-schema-change.md)
 * pt-pmp
 * pt-query-digest
 * pt-show-grants
@@ -46,4 +47,4 @@ Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器�
 
 ## 说明
 
-本文档基于 [Percona Toolkit Documentation](https://www.percona.com/doc/percona-toolkit) 官方英文文档翻译。同时参考了[《高性能MySQL》](http://shop.oreilly.com/product/0636920022343.do)一书。该书的三位主要作者 Baron Schwartz、Peter Zaitsev、Vadim Tkachenko 在MySQL DBA 圈内耳熟能详，他们组建的Percona公司即是Percona Toolkit的开发和维护方。
+本文档基于 [Percona Toolkit Documentation](https://www.percona.com/doc/percona-toolkit) 官方英文文档翻译，同时参考了[《高性能MySQL》](http://shop.oreilly.com/product/0636920022343.do)一书。该书的三位主要作者 Baron Schwartz、Peter Zaitsev、Vadim Tkachenko 在MySQL DBA 圈内耳熟能详，他们组建的Percona公司即是Percona Toolkit的开发和维护方。

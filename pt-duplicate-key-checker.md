@@ -1,8 +1,7 @@
 # pt-duplicate-key-checker
 
 ## 名称
- pt-duplicate-key-checker - 从 MySQL 表中找出重复的索引和外键
-
+pt-duplicate-key-checker - 从 MySQL 表中找出重复的索引和外键
 
 ## 简介
 
@@ -21,7 +20,7 @@ pt-duplicate-key-checker [OPTIONS] [DSN]
 pt-duplicate-key-checker 会检查MySQL表中重复或冗余的索引和外键。连接选项 OPTIONS 从 MySQL 配置文件中读取。
 
 ### 示例
-#### 创建示例表：
+#### 创建示例表
 ```
 CREATE DATABASE IF NOT EXISTS percona;
 USE percona;
@@ -38,11 +37,11 @@ CREATE TABLE IF NOT EXISTS user (
   FULLTEXT KEY (email)
 );
 ```
-#### 命令示例：
+#### 命令示例
 ```
 pt-duplicate-key-checker --host=localhost --port=3306 --user=root --password=123456 --charset=utf8 --databases=percona --tables=user
 ```
-#### 返回结果：
+#### 返回结果
 ```
 # ########################################################################
 # percona.user
