@@ -16,7 +16,7 @@ wget percona.com/get/TOOL
 wget percona.com/get/pt-duplicate-key-checker
 ```
 
-如果你是 macOS 的用户，还可以通过 Homebrew 包管理工具来安装：
+如果你是 macOS 的用户，还可以通过 [Homebrew](http://brew.sh/index_zh-cn.html) 包管理工具来安装：
 ```
 brew install percona-toolkit
 ```
