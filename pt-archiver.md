@@ -2,7 +2,7 @@
 
 ## 名称
 
-pt-archiver - 将mysql数据库中表的记录归档到另外一个表或者文件
+pt-archiver - 将MySQL数据库中表的记录归档到另外一个表或者文件
 
 ## 简介
 
