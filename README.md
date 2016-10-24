@@ -15,7 +15,7 @@ Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器�
 |:---|:---|
 |[pt-align](pt-align.md) | 列对齐输出 |
 |[pt-archiver](pt-archiver.md) |归档表记录|
-|pt-config-diff  | 比较MySQL配置文件和服务器参数|
+|[pt-config-diff](pt-config-diff.md)  | 比较MySQL配置文件和服务器参数|
 |pt-deadlock-logger | 提取和记录MySQL死锁的相关信息|
 |pt-diskstats | 为GUN/LINUX打印磁盘IO统计信息，|
 |[pt-duplicate-key-checker](pt-duplicate-key-checker.md) | 从 MySQL 表中找出重复的索引和外键|
