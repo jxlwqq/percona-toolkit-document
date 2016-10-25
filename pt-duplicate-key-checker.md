@@ -24,7 +24,7 @@ pt-duplicate-key-checker 会检查MySQL表中重复或冗余的索引和外键�
 ```
 CREATE DATABASE IF NOT EXISTS percona;
 USE percona;
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE IF NOT EXISTS pt_duplicate_key_checker (
   id       INT         NOT NULL AUTO_INCREMENT,
   username VARCHAR(50) NOT NULL DEFAULT '' COMMENT '用户名',
   email    VARCHAR(50) NOT NULL DEFAULT '' COMMENT '邮箱',
@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS user (
 ```
 #### 命令示例
 ```
-pt-duplicate-key-checker --host=localhost --port=3306 --user=root --password=123456 --charset=utf8 --databases=percona --tables=user
+pt-duplicate-key-checker --host=localhost --port=3306 --user=root --password=123456 --charset=utf8 --databases=percona --tables=pt_duplicate_key_checker
 ```
 #### 返回结果
 ```
 # ########################################################################
-# percona.user
+# percona.pt_duplicate_key_checker
 # ########################################################################
 
 # Uniqueness of idx_i ignored because PRIMARY is a duplicate constraint
@@ -55,7 +55,7 @@ pt-duplicate-key-checker --host=localhost --port=3306 --user=root --password=123
 # Column types:
 #	  `id` int(11) not null auto_increment
 # To remove this duplicate index, execute:
-ALTER TABLE `percona`.`user` DROP INDEX `idx_i`;
+ALTER TABLE `percona`.`pt_duplicate_key_checker` DROP INDEX `idx_i`;
 
 # idx_u is a left-prefix of idx_up
 # Key definitions:
@@ -65,7 +65,7 @@ ALTER TABLE `percona`.`user` DROP INDEX `idx_i`;
 #	  `username` varchar(50) not null default '' comment '用户名'
 #	  `password` char(32) not null default '' comment '密码'
 # To remove this duplicate index, execute:
-ALTER TABLE `percona`.`user` DROP INDEX `idx_u`;
+ALTER TABLE `percona`.`pt_duplicate_key_checker` DROP INDEX `idx_u`;
 
 # ########################################################################
 # Summary of indexes
@@ -96,14 +96,81 @@ Percona Toolkit 是一套成熟的并经过充分与严格测试验证的工具�
 本工具接受一些额外的命令行参数。
 
 ### --all-structs
-
 比较不同类型的索引（例如B-Tree、Hash等）。
 默认为False，因为即使覆盖的索引列完全相同，由于索引的类型不同，所以不能被认为是重复索引。
 
 ### --ask-pass
-连接MySQL时提示输入密码
+连接MySQL时提示输入密码。
 
 ### --charset
-设置默认的字符集。简写形式为: -A。
+简写格式：-A
+数据类型：字符串（string）
+
+设置默认字符集。如果值是 utf8，首先需要将 Perl 语言的 binmode() 函数的 STDOUT（标准输出）设置为utf8，然后将 mysql_enable_utf8 选项传递给 DBD::mysql，最后在连接MySQL后，运行 SET NAMES UTF8 命令。其他非 utf8 值，在完成设置 binmode() 函数的 STDOUT，连接MySQL后，直接运行 SET NAMES 命令。
+
+### --[no]clustered
+
+### --config
+类型：数组（Array）
+
+读取以逗号分隔的配置信息;如果指定--config，则必须是命令行上的第一个选项。
+
+### --databases
+简写格式：-d
+数据类型：哈希（hash）
+仅检查给定的数据库，多个数据库用,分割。
+ 
+
+### --defaults-file
+简写格式：-F
+数据类型: 字符串（string）
+仅从指定的文件中读取MySQL选项。文件路径必须是一个绝对路径。
+
+### --engines
+简写格式: -e
+数据类型: 哈希（hash）
+
+ 仅检查给定的数据库引擎类型的数据表，多个引擎类型用,分割。
+
+### --help
+显示工具的帮助信息。
+
+### --host
+
+简写格式：-h
+数据类型：字符串（string）
+连接 MySQL 服务器。
+
+### --ignore-databases
+数据类型: Hash
+忽略给定的数据库，多个数据库以,分割。
+
+### --ignore-engines
+数据类型：哈希（Hash）
+忽略给定的数据库引擎类型的数据表，多个引擎类型用,分割。
+
+### --ignore-order
+忽略联合索引中列的顺序，例如 KEY(a,b) 与 KEY(b,a) 是重复的。
+
+### --ignore-tables
+数据类型：哈希（hash）
+
+忽略给定的数据表，多个数据表用,分割。表名前需指定库名。例如 数据库名.数据表名（db_name.table_name）。
+
+
+### --key-types
+数据类型：字符串（string）
+默认值：fk
+
+当值为f（指foreign keys 外键）时，仅检查重复外键。
+当值为k（指keys 索引），仅检查重复或冗余索引。
+当值为fk（只 foreign keys & keys 外键和索引），检查重复外键和索引。
+
+### --password
+简写格式：-p
+数据类型：字符串（string）
+
+连接数据库的密码。如果密码中包含,则需要用\转移。
+
 
 ## DSN 选项

@@ -1,4 +1,4 @@
-# Options
+# Options 临时文件
 
 ### --ask-pass
 连接 MySQL 时，提示输入密码。
@@ -11,3 +11,27 @@
 binmode(STDOUT, ':encoding(utf8)');
 ```
 
+### --help
+显示帮助信息。
+
+### --version
+显示工具的版本信息。
+
+### --config
+
+类型：数组（Array）
+
+读取以逗号分隔的配置信息;如果指定--config，则必须是命令行上的第一个选项。
+
+
+
+### --databases
+简写格式：-d；类型: 哈希（hash）
+
+指定数据库名，多个数据库以,分割。
+
+
+### --defaults-file
+简写格式：-F；类型: 字符串（string）
+从指定的文件中读取MySQL选项。文件路径必须是一个绝对路径。
+ 
