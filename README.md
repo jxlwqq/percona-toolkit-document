@@ -28,12 +28,12 @@ Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器�
 |pt-ioprofile | 对某个pid附加一个strace进程进行IO分|
 |pt-kill | Kill掉符合指定条件 MySQL 语句|
 |pt-mext | 并行查看 SHOW GLOBAL STATUS 的多个样本的信息|
-|pt-MySQL-summary | 对MySQL服务器生成一份详细的配置情况以及sataus信息|
-|[pt-online-schema-change](pt-online-schema-change.md) | 执行无锁的表结构变更|
+|pt-mysql-summary | 对MySQL服务器生成一份详细的配置情况以及 status 信息|
+|[pt-online-schema-change](pt-online-schema-change.md) | 执行 status 无锁的表结构变更|
 |pt-pmp | 为查询程序执行聚合的 GDB 堆栈跟踪|
 |pt-query-digest |分析查询执行日志，并产生一个查询报告 |
 |pt-show-grants | 规范化和打印 MySQL 权限|
-|pt-sift | 浏览pt-stalk生成的文件|
+|pt-sift | 浏览 pt-stalk 生成的文件|
 |pt-slave-delay | 设置从服务器落后于主服务器指定时间|
 |pt-slave-find | 查看所有从服务器复制层级关系|
 |pt-slave-restart | 监视 MySQL 复制错误，并尝试重启 MySQL 复制当复制停止的时候|
