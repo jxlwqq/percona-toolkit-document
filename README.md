@@ -4,7 +4,7 @@ Percona Toolkit 是一套高级命令行工具的集合，用于执行一系列�
 
 Percona Toolkit 是那些私有或一次性脚本的理想替代工具，因为它由专业人士开发，并经过了充分而严谨的测试和验证。安装快速简单，无需依赖任何其他的库。
 
-Percona Toolkit 源自 Maatkit 和 Aspersa 这两个最着名的MySQL服务器管理工具包。
+Percona Toolkit 源自 Maatkit 和 Aspersa 这两个著名的MySQL服务器管理工具包。
 
 ## 获取 Percona Toolkit
 
