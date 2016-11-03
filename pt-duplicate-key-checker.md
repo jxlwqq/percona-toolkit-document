@@ -247,3 +247,33 @@ wait_timeout=10000
 
 
 ## DSN 选项
+
+DSN 选项用于创建一个 DSN。每个选线以`option=value`的形式给出。这些选项是区分大小写的，所以`P`和`p`代表着不同的含义。在`=`之前或之后都不能都空格，如果值含有空格，则需要使用引号。DSN 选项之间用逗号分隔。
+详细细节可参见 percona-toolkit 帮助页面。
+
+ |KEY  |DSN|COPY  |含义|
+|:---:|:---:|:---: |:---|
+|A    |charset|yes   |设置默认字符集|
+|D    |database|yes   |连接的数据库名|
+|F    |mysql_read_default_file|yes   |从指定的文件中读取默认选项|
+|P    |port|yes   |连接的端口号，默认为3306|
+|S    |mysql_socket|yes   |连接的Socket文件|
+|h    |host|yes   |连接的服务器名|
+|p    |password|yes   |连接的密码，如果密码含有`,`则需要转义|
+|u    |user|yes   |连接的用户名|
+
+## 环境
+
+环境变量 `PTDEBUG` 为 `1` 的话，可以打印出详细的调试信息。要开启调试并将结果输出到一个文件中，可以运行以下命令：
+```
+PTDEBUG=1 pt-duplicate-key-checker ... > FILE 2>&1
+```
+注意，调试信息可能会生成几兆字节的输出。
+
+## 系统要求
+
+Perl开发环境。
+
+## Bugs
+
+本工具目前已知的bug：[http://www.percona.com/bugs/pt-align](http://www.percona.com/bugs/pt-align)
