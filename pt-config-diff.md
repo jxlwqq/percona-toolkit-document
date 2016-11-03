@@ -81,4 +81,4 @@ Percona Toolkit 是一套成熟的并经过充分与严格测试验证的工具�
 Perl开发环境。
 
 ## Bugs
-本工具目前已知的bug：[http://www.percona.com/bugs/pt-config-diff](http://www.percona.com/bugs/pt-config-diff)
+本工具目前已知的bug：http://www.percona.com/bugs/pt-config-diff

@@ -276,4 +276,4 @@ Perl开发环境。
 
 ## Bugs
 
-本工具目前已知的bug：[http://www.percona.com/bugs/pt-align](http://www.percona.com/bugs/pt-align)
+本工具目前已知的bug：http://www.percona.com/bugs/pt-duplicate-key-checker
