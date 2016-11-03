@@ -15,20 +15,20 @@ Percona Toolkit 源自 Maatkit 和 Aspersa 这两个著名的MySQL服务器管�
 |:---|:---|
 |[pt-align](pt-align.md) | 列对齐输出 |
 |[pt-archiver](pt-archiver.md) |归档表记录|
-|[pt-config-diff](pt-config-diff.md)  | 比较MySQL配置文件和服务器参数|
-|pt-deadlock-logger | 提取和记录MySQL死锁的相关信息|
-|pt-diskstats | 为GUN/LINUX打印磁盘IO统计信息，|
+|[pt-config-diff](pt-config-diff.md)  | 比较 MySQL 配置文件和服务器参数|
+|pt-deadlock-logger | 提取和记录 MySQL 死锁的相关信息|
+|pt-diskstats | 为 GUN/LINUX 打印磁盘 IO 统计信息，|
 |[pt-duplicate-key-checker](pt-duplicate-key-checker.md) | 从 MySQL 表中找出重复的索引和外键|
 |pt-fifo-split | 模拟切割文件并通过管道传递给队列|
-|pt-find |查找MySQL表并执行指定的命令|
-|pt-fingerprint | 生成查询指纹|
-|pt-fk-error-logger | 提取和记录MySQL外键错误信息|
-|pt-heartbeat | 监控MySQL复制延迟|
-|pt-index-usage |从Log文件中读取插叙语句，并用Explain分析他们是如何利用索引|
-|pt-ioprofile | 对某个pid附加一个strace进程进行IO分|
-|pt-kill | Kill掉符合指定条件 MySQL 语句|
+|pt-find |查找 MySQL 表并执行指定的命令|
+|[pt-fingerprint](pt-fingerprint.md) | 生成查询指纹|
+|pt-fk-error-logger | 提取和记录 MySQL 外键错误信息|
+|pt-heartbeat | 监控 MySQL 复制延迟|
+|pt-index-usage |从 Log 文件中读取插叙语句，并用 Explain 分析他们是如何利用索引|
+|pt-ioprofile | 对某个 pid 附加一个 strace 进程进行 IO 分|
+|pt-kill | 杀死符合指定条件 MySQL 语句|
 |pt-mext | 并行查看 SHOW GLOBAL STATUS 的多个样本的信息|
-|pt-mysql-summary | 对MySQL服务器生成一份详细的配置情况以及 status 信息|
+|pt-mysql-summary | 对 MySQL 服务器生成一份详细的配置情况以及 status 信息|
 |[pt-online-schema-change](pt-online-schema-change.md) | 执行 status 无锁的表结构变更|
 |pt-pmp | 为查询程序执行聚合的 GDB 堆栈跟踪|
 |pt-query-digest |分析查询执行日志，并产生一个查询报告 |
